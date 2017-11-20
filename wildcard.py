@@ -15,10 +15,7 @@ def wildcard(sender_id,channel):
   elif channel.startswith('G') == True:
       channel_info = sc.api_call("groups.info",channel=channel)
       member_ids = channel_info['group']['members']
-
-  for member_id in member_ids:
-    user_info = sc.api_call("users.info",user = member_id)
-    member_names.append("<@" + user_info['user']['name'] + ">")
+      
 # Inital group only had bots and me, so ignoring bots left an empty list
 # should create an error for this, which would apply in a DM
 #    if user_info['user']['deleted'] == False and user_info['user']['is_bot'] == False:
